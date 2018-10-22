@@ -1,0 +1,24 @@
+.botaoap {
+  display: inline-block;
+  font-size: 6vw;
+  color: white;
+  background-color: darkgreen;
+  width: 35vw;
+  height: 10vw;
+}
+.botaoad{
+  display: inline-block;
+  font-size: 6vw;
+  color: white;
+  background-color: darkorange;
+  width: 35vw;
+  height: 10vw;
+}
+
+.inputgeral {
+  font-size:6vw;
+  width: 30vw;
+  height: 6vw;
+  margin-top: 3vw; 
+  margin-left: 2vw;
+}
