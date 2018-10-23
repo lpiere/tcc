@@ -1,13 +1,11 @@
-var saldo;
+var saldo = document.getElementById("saldo");
+var nome = "luan"
 
-var database = firebase.database()
-
-function getsaldo(setor, nome){
-    firebase.database().ref('/pessoa/1').on('value', function(snapshot){
-        snapshot.forEach(function (item){
-                console.log("esse é o nome"+item.val().nome);
-                console.log("esse é o saldo"+item.val().saldo);
-        });
+firebase.database().ref('pessoa/').on('value', function(snapshot){
+    snapshot.forEach(function (item){
+        if(nome == item.val().nome){
+            console.log("esse é o nome1: " + item.val().saldo);
+            saldo.innerText = item.val().saldo
+        }
     });
-
-}
+});
