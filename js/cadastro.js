@@ -12,7 +12,7 @@ cod_pessoaRef.on('value', function(snapshot) {
 
 function prep(){
     n = nome.value;
-    s = senha.value;
+    s = hashCode(senha.value);
     
     var data = {
       nome: n,
@@ -26,3 +26,7 @@ function prep(){
     firebase.database().ref("/pessoa/"+cod_pessoa+"/").set(data);
     window.location.replace("./login.html"); 
 }
+
+hashCode = function(s){
+    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
+  }

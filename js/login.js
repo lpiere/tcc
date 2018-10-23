@@ -8,7 +8,7 @@ function log(){
     firebase.database().ref('pessoa/').on('value', function(snapshot){
         snapshot.forEach(function (item){
             if(nome.value == item.val().nome){
-                if(senha.value == item.val().senha){
+                if(hashCode(senha.value) == item.val().senha){
                     window.location.replace("./telausuario.html");
                 }else{
                     alert("senha errada");
@@ -19,3 +19,7 @@ function log(){
     console.log("dsghjfgdfkha");
     
 }
+
+hashCode = function(s){
+    return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
+  }
