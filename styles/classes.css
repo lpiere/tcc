@@ -14,6 +14,12 @@
   width: 35vw;
   height: 10vw;
 }
+.botaodesktop{
+  display: inline-block;
+  font-size: 2vw;
+  background-color: chocolate;
+  color: black;
+}
 
 .inputgeral {
   font-size:6vw;
