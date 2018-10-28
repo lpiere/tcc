@@ -1,7 +1,7 @@
-var cod_pessoa;
-var nome = document.getElementById("usr");
-var senha = document.getElementById("pass");
-var cod_pessoaRef;
+let cod_pessoa;
+let nome = document.getElementById("usr");
+let senha = document.getElementById("pass");
+let cod_pessoaRef;
 
 cod_pessoaRef = firebase.database().ref('/cod_pessoa');
 cod_pessoaRef.on('value', function(snapshot) {

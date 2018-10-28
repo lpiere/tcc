@@ -1,37 +1,35 @@
-
-var saldo = document.getElementById("saldo");
-var nome = "luan"
-// var mqtt = require('mqtt')
-// var client  = mqtt.connect('mqtt://test.mosquitto.org')
- 
-// client.on('connect', function () {
-//   client.subscribe('presence', function (err) {
-//     if (!err) {
-//       client.publish('presence', 'Hello mqtt')
-//     }
-//   })
-// })
- 
-// client.on('message', function (topic, message) {
-//   // message is Buffer
-//   console.log(message.toString())
-//   client.end()
-// })
+let saldo = document.getElementById("saldo");
+const nome = require("./login.js");
+let disponivel;
 
 firebase.database().ref('pessoa/').on('value', function(snapshot){
     snapshot.forEach(function (item){
         if(nome == item.val().nome){
             console.log("esse é o nome1: " + item.val().saldo);
-            saldo.innerText = item.val().saldo
+            saldo.innerText = item.val().saldo;
+            disponivel = item.val().saldo;
         }
     });
 });
 
 
-function open(){
-
+function abrir(){
+    let maquinaid = document.getElementById("maquinaid");
+    if(maquinaid.value != ""){
+        firebase.database().ref("/maquina/"+maquinaid.value+"/ligar").set("true");
+        firebase.database().ref("/maquina/"+maquinaid.value+"/disponivel").set(disponivel);
+    }else{
+        alert("coloque o numero da maquina")
+    }
 }
 
-function close(){
+function fechar(){
+    let maquinaid = document.getElementById("maquinaid");
+    if(maquinaid.value != ""){
+        firebase.database().ref("/maquina/"+maquinaid.value+"/ligar").set("false");
+        firebase.database().ref("/maquina/"+maquinaid.value+"/disponivel").set(0);
+    }else{   
+        alert("coloque o numero da maquina")
+    }
 
 }
