@@ -17,8 +17,9 @@
 .botaodesktop{
   display: inline-block;
   font-size: 2vw;
-  background-color: chocolate;
+  background-color: rgb(30, 174, 210);
   color: black;
+  width: 100%
 }
 
 .inputgeral {
