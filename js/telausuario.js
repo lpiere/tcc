@@ -1,9 +1,8 @@
 let saldo = document.getElementById("saldo");
 let disponivel;
 let idpessoa;
-//const nome = "luan"
+const nome = "luan"
 
-console.log(login.name)
 chamardados()
 
 
