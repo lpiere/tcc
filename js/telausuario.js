@@ -1,9 +1,9 @@
 let saldo = document.getElementById("saldo");
-//const nome = require("./login");
 let disponivel;
 let idpessoa;
-const nome = "luan"
+//const nome = "luan"
 
+console.log(login.name)
 chamardados()
 
 
