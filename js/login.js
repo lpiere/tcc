@@ -1,7 +1,6 @@
 let nome = document.getElementById("usr");
 let senha = document.getElementById("pass");
 
-
 function log(){
     console.log(nome.value);
     console.log(senha.value);
